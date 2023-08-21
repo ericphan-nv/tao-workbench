@@ -1,7 +1,0 @@
-numpy
-tqdm
-opencv-python
-h5py
-pyyaml
-pandas
-Pillow

@@ -40,33 +40,38 @@ nms_config {
   top_k: 200
 }
 augmentation_config {
-    output_width: 960
-    output_height: 544
+    output_width: 300
+    output_height: 300
     output_channel: 3
 }
 dataset_config {
   data_sources: {
-    tfrecords_path: "TAO_DATA_PATH/tfrecords/kitti_train*"
+      label_directory_path: "/home/jupyter/imported_files/files/data/training/label_2"
+      image_directory_path: "/home/jupyter/imported_files/files/data/training/image_2"
   }
   include_difficult_in_training: true
   target_class_mapping {
-      key: "forklift"
-      value: "forklift"
+      key: "car"
+      value: "car"
   }
   target_class_mapping {
-      key: "cone"
-      value: "cone"
+      key: "pedestrian"
+      value: "pedestrian"
   }
   target_class_mapping {
-      key: "fire_extinguisher"
-      value: "fire_extinguisher"
+      key: "cyclist"
+      value: "cyclist"
   }
   target_class_mapping {
-      key: "cart"
-      value: "cart"
+      key: "van"
+      value: "car"
+  }
+  target_class_mapping {
+      key: "person_sitting"
+      value: "pedestrian"
   }
   validation_data_sources: {
-      label_directory_path: "TAO_DATA_PATH/val/labels"
-      image_directory_path: "TAO_DATA_PATH/val/images"
+      label_directory_path: "/home/jupyter/imported_files/files/data/val/label"
+      image_directory_path: "/home/jupyter/imported_files/files/data/val/image"
   }
 }
